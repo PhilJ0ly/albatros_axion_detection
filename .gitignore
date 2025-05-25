@@ -13,6 +13,16 @@ albatros_analysis/
 .ssh/
 .viminfo
 .vscode-server
+.env
+.$PROJECT
+.$SCRATCH
+.ICEauthority
+.astropy/
+.dbus/
+.ipython/
+.jupyter/
+.vnc/
+
 
 .ipynb_checkpoints
 __pycache__/

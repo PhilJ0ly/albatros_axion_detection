@@ -45,10 +45,10 @@ else
 
 	echo "$ARG1 environment successfully created!"
 
-	if [ ! -d "./.env" ]; then
-	  mkdir "./.env"
+	if [ ! -d "./env" ]; then
+	  mkdir "./env"
 	fi
-	LOG_FILE="./.env/mist_${ARG1}_environment.txt"
+	LOG_FILE="./env/mist_${ARG1}_environment.txt"
 	echo "Environment: $ARG1" > $LOG_FILE
 	echo "Created on: $(date)" >> $LOG_FILE
 	echo "" >> $LOG_FILE

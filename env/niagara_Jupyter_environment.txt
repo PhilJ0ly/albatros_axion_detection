@@ -1,5 +1,5 @@
 Environment: Jupyter
-Created on: Wed May 21 23:02:51 EDT 2025
+Created on: Sat May 24 15:14:49 EDT 2025
 
 === Pip Packages ===
 Package              Version
@@ -57,6 +57,7 @@ pyrsistent           0.18.0
 python-dateutil      2.9.0.post0
 pytz                 2025.2
 pyzmq                25.1.2
+scipy                1.5.4
 Send2Trash           1.8.3
 setuptools           39.2.0
 sgp4                 2.24

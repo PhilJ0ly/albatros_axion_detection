@@ -6,7 +6,7 @@
 show_help() {
         cat << EOF
 Usage: 
-	source mist_build.sh [OPTIONS] <environment name>
+	source niagara_build.sh [OPTIONS] <environment name>
 
 Options:
         -h, --help      Shows help
@@ -14,7 +14,7 @@ Options:
 Description:
         This script sets up a standard Python virtual environment on the Niagara machine comparible with the albatros_analysis repository.
         The environment is setup in the current directory.
-        A environment log will be generated in ./.env/niagara_<name>_environment.txt outlining every packages, modules loaded, and system properties.
+        A environment log will be generated in ./env/niagara_<name>_environment.txt outlining every packages, modules loaded, and system properties.
 EOF
 }
 
@@ -35,13 +35,13 @@ else
 	echo "$ARG1 Python virtual environment successfully created"
 	echo "Installing packages..."
 
-	pip install pip==21.3.1
-	pip install numpy==1.19.5 astropy==4.1 pandas==1.1.5 notebook==6.4.10 skyfield==1.53 matplotlib==3.3.4
-	if [ ! -d "../.env" ]; then
-	  mkdir "../.env"
+	python -m pip install pip==21.3.1
+	python -m pip install numpy==1.19.5 astropy==4.1 pandas==1.1.5 notebook==6.4.10 skyfield==1.53 matplotlib==3.3.4 scipy==1.5.4
+	if [ ! -d "../env" ]; then
+	  mkdir "../env"
 	fi
-	LOG_FILE="../.env/niagara_${1}_environment.txt"
-	echo "Environment: $1" > $LOG_FILE
+	LOG_FILE="../env/niagara_${ARG1}_environment.txt"
+	echo "Environment: $ARG1" > $LOG_FILE
 	echo "Created on: $(date)" >> $LOG_FILE
 	echo "" >> $LOG_FILE
 
@@ -59,7 +59,7 @@ else
 	echo "=== System Information ===" >> $LOG_FILE
 	echo "Python Version: $(python --version)" >> $LOG_FILE
 
-	echo "Environment details saved to ./.env/niagara_${1}_environment.txt"
+	echo "Environment details saved to ./env/niagara_${ARG1}_environment.txt"
 
 	deactivate 
 	cd ..
