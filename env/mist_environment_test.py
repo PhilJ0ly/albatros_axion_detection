@@ -1,4 +1,11 @@
 #!/usr/bin/env python3
+
+# Philippe J0ly 2025-05-20
+
+# This script is designed to test all necessary components of a MIST conda environment compatible with the albatros_analysis repository
+
+# This script was AI generated (Claude Sonnet 4.9)
+
 """
 Environment Testing Script
 Tests all loaded modules and packages to ensure proper functionality.
