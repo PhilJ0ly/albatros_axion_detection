@@ -11,3 +11,7 @@ ARG1="${1:-albatros}"
 source activate $ARG1
 module load cuda/11.7.1
 module load gcc/11.4.0
+
+export USE_GPU=1
+export LD_LIBRARY_PATH=/home/s/sievers/philj0ly/.conda/envs/albatros/lib/:$LD_LIBRARY_PATH
+export CUPY_CACHE_DIR=/project/s/sievers/philj0ly/.cupy/kernel_cache
