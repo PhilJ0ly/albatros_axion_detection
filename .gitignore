@@ -23,13 +23,13 @@ albatros_analysis/
 .jupyter/
 .vnc/
 
-
 .ipynb_checkpoints
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 *.code-workspace
+*.o
 .vscode/
 
 **/bin/

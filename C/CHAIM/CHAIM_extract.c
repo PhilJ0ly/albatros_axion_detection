@@ -16,7 +16,8 @@
 
 int main(int argc, char *argv[])
 {
-	double lat[1] = {79.415416667}, lon[1] = {269.226916667};
+	// ALBATROS Uapishka deployment Coords
+	double lat[1] = {51.4646065}, lon[1] = {-68.2352594};
 	int nLat = 1;
 	char *	dbFile = argv[1];
 	double * output_ac, * output_ec;
