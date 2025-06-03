@@ -6,6 +6,8 @@ albatros_analysis/
 .conda/
 .condarc
 .config/
+.mii/
+.nv/
 .cshrc
 .cupy/
 .local/
@@ -24,7 +26,6 @@ albatros_analysis/
 .vnc/
 
 .ipynb_checkpoints
-__pycache__/
 *.pyc
 *.pyo
 *.pyd
@@ -32,6 +33,8 @@ __pycache__/
 *.o
 .vscode/
 
+**/__pycache__/
+**/.legacy/
 **/bin/
 **/include/
 **/lib/
