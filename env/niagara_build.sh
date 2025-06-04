@@ -1,12 +1,14 @@
 #!/bin/bash
 
 # Philippe Joly 2025-05-21
-# This script is to setup a standard Python virtual environment on the Niagara machine compatible with the albatros_analysis repository
+# This script is to setup a standard Python virtual environment on the Niagara machine 
 
 show_help() {
         cat << EOF
 Usage: 
-	source niagara_build.sh [OPTIONS] <environment name>
+	Link the appropriate requirements_file and run
+
+	source niagara_jupyter_build.sh [OPTIONS] <environment name>
 
 Options:
         -h, --help      Shows help
@@ -18,25 +20,29 @@ Description:
 EOF
 }
 
+REQ='/home/s/sievers/philj0ly/env/albatros_analysis_requirements.txt'
 
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then
-        show_help 
+    show_help 
 else
 
 	echo "Creating Python virtual environment..."
-	module load NiaEnv/2019b
+
+	module load NiaEnv/2022a
+	module load python/3.11.5
+
 	ARG1="${1:-pythonEnv}"
 
-	python3 -m venv $ARG1
-	# At the creation of the script, it roots to Python 3.6.8
+	python -m venv $ARG1
 
 	cd $ARG1
 	source ./bin/activate
 	echo "$ARG1 Python virtual environment successfully created"
 	echo "Installing packages..."
 
-	python -m pip install pip==21.3.1
-	python -m pip install numpy==1.19.5 astropy==4.1 pandas==1.1.5 notebook==6.4.10 skyfield==1.53 matplotlib==3.3.4 scipy==1.5.4
+	python -m pip install pip==25.1.1
+	python -m pip install -r $REQ
+	
 	if [ ! -d "../env" ]; then
 	  mkdir "../env"
 	fi
@@ -59,6 +65,7 @@ else
 	echo "=== System Information ===" >> $LOG_FILE
 	echo "Python Version: $(python --version)" >> $LOG_FILE
 
+	echo ""
 	echo "Environment details saved to ./env/niagara_${ARG1}_environment.txt"
 
 	deactivate 

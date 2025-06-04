@@ -40,5 +40,6 @@ albatros_analysis/
 **/lib/
 **/lib64
 **/share/
+**/etc/
 **/pyvenv.cfg
 **/pip-selfcheck.json
