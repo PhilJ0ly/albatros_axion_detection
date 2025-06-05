@@ -33,7 +33,7 @@ else
 	conda config --add channels conda-forge
 	conda config --set channel_priority strict
 
-	conda install numpy=1.26.4 numba=0.59.1 matplotlib=3.8.3 astropy=6.1.7 sgp4=2.24 skyfield=1.53 pandas=2.2.2
+	conda install numpy=1.26.4 numba=0.59.1 matplotlib=3.8.3 astropy=6.1.7 sgp4=2.24 skyfield=1.53 pandas=2.2.2 psutil=7.0.0 scipy=1.15.2
 
 	module load cuda/11.7.1
 	module load gcc/11.4.0
