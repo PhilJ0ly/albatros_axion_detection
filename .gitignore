@@ -1,4 +1,3 @@
-albatros_analysis/
 
 .bash_profile
 .bashrc
@@ -33,6 +32,8 @@ albatros_analysis/
 *.code-workspace
 *.o
 .vscode/
+*.so
+*.raw
 
 **/__pycache__/
 **/.legacy/
